@@ -6,15 +6,14 @@ public:
 
         while (i >= 0 || k > 0) {
             if (i >= 0) {
-                k += num[i];
+                k += num[i];  // add digit
                 i--;
             }
-            result.push_back(k % 10);
-            k /= 10;
+            result.push_back(k % 10); // current digit
+            k /= 10;                  // carry
         }
 
         reverse(result.begin(), result.end());
         return result;
     }
 };
-
