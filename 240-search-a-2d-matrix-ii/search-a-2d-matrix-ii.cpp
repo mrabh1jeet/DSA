@@ -5,6 +5,7 @@ public:
         int row=0,coloum=m-1;
         while(row<n && coloum>=0){
             if(matrix[row][coloum]==target){
+                matrix.clear();
                 return true;
             }
             else if (matrix[row][coloum]<target){
@@ -14,6 +15,7 @@ public:
                 coloum--;
             }
         }
+        matrix.clear();
         return false;
         
     }
