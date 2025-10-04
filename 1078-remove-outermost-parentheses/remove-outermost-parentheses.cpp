@@ -1,23 +1,15 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
-        string result;
-        int balance = 0;  // track nesting depth
-
-        for (char c : s) {
-            if (c == '(') {
-                if (balance > 0) {   // not outermost
-                    result.push_back(c);
-                }
-                balance++;
-            } else { // c == ')'
-                balance--;
-                if (balance > 0) {   // not outermost
-                    result.push_back(c);
-                }
-            }
+        int count =0;
+        string ans="";
+        for (int i =0;i<s.size();i++)
+        {
+            if (s[i]==')') count --;
+            if(count !=0)ans.push_back(s[i]);
+            if (s[i]=='(') count ++;
         }
-
-        return result;
+        return ans;
+        
     }
 };
